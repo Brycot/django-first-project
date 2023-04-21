@@ -1,0 +1,18 @@
+{% extends 'layout/base.html' %} {% block content %}
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <h1>Tasks Completed</h1>
+        {% for task in tasks %}
+        <div>
+            <a class="card-title" href="{% url 'task_detail' task.id %}">
+                <h3>{{task.title}}</h3>
+            </a>
+            <p class="card-text">{{task.description}}</p>
+            <p class="card-text">{{task.datecompleted}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
